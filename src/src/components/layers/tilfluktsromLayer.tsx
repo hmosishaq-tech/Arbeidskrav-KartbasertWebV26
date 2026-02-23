@@ -3,7 +3,7 @@ import VectorSource from "ol/source/Vector.js";
 import { GeoJSON } from "ol/format.js";
 import { Circle, Fill, Stroke, Style, Text } from "ol/style.js";
 
-import type { FeatureLike } from "ol/Feature";
+import type { FeatureLike } from "ol/Feature.js";
 
 
 interface tilfluktsromProperties {
