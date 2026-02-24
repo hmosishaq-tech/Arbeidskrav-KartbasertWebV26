@@ -10,7 +10,7 @@ import VectorLayer from "ol/layer/Vector.js";
 import VectorSource from "ol/source/Vector.js";
 import {GeoJSON} from "ol/format.js";
 import {tilfluktsromLayer} from "../layers/tilfluktsromLayer.js";
-
+import { SFdistrikterLayer } from "../layers/SFdistrikterLayer.js";
 
 useGeographic();
 
@@ -22,8 +22,16 @@ const map = new Map({
     }),
     layers: [
         new TileLayer({ source: new OSM() }),
-        tilfluktsromLayer
+        tilfluktsromLayer,
+        SFdistrikterLayer
     ],
+});
+
+const SFdistrikter = new VectorLayer ({
+    source: new VectorSource({
+        url: "/Arbeidskrav-KartbasertWebV26/SFdistrikter.geojson",
+        format: new GeoJSON(),
+    })
 });
 
 
